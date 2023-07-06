@@ -1,0 +1,210 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 30px 0;
+}
+
+.button {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px 32px;
+  background: transparent;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+  background-color: aquamarine;
+  text-transform: uppercase;
+}
+
+.button::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+  top: -5px;
+  left: -5px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.button:hover::before {
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.button:active::before {
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.button--small {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 8px 12px;
+  font-weight: 600;
+  background: red;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4),
+    0 -0.3rem 0.6rem rgba(0, 0, 0, 0.2) inset;
+  border: 1px solid rgb(216, 1, 1);
+  border-radius: 15px;
+}
+
+.button--small::before {
+  width: 75%;
+  height: 12.5%;
+  border: none;
+  background-color: aliceblue;
+  filter: blur(3px);
+  top: 5px;
+  left: 12.5%;
+  transition: 0.5s;
+}
+
+.button--small:hover {
+  background-color: rgb(193, 8, 8);
+  border: 1px solid rgb(159, 1, 1);
+}
+
+.button--small:hover:before,
+.button--small:focus:before {
+  top: 5px;
+  left: 12.5%;
+}
+
+.button--small:active {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4), 0 0.4rem 1rem rgba(0, 0, 0, 0.3) inset;
+}
+
+.button--small:active::before {
+  opacity: 0;
+}
+
+.button--big {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 12px 20px;
+  font-weight: 700;
+  background: rgb(83, 73, 92);
+  color: blanchedalmond;
+  border: 0px solid rgba(131, 58, 180, 1);
+}
+
+.button--big::before {
+  width: 10px;
+  height: 5px;
+  border: 1px solid greenyellow;
+  top: -2px;
+  left: 15%;
+  background-color: gray;
+}
+
+.button--big::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 10px;
+  height: 5px;
+  border: 1px solid greenyellow;
+  bottom: -2px;
+  right: 15%;
+  background-color: gray;
+  transition: 0.3s;
+}
+
+.button--big:hover {
+  transform: scale(110%);
+  transition: 0.5s;
+  box-shadow: 2px 2px 12px 2px greenyellow, -2px 2px 12px 2px greenyellow,
+    -2px -2px 12px 2px greenyellow, 2px -2px 12px 2px greenyellow,
+    inset 2px 2px 12px 2px greenyellow, inset -2px -2px 12px 2px greenyellow;
+}
+
+.button--big:hover::before {
+  top: -3px;
+  left: 80%;
+  transform: scale(110%);
+  width: 20px;
+}
+
+.button--big:hover::after {
+  bottom: -3px;
+  right: 80%;
+  transform: scale(110%);
+  width: 20px;
+}
+
+.button:active {
+  box-shadow: 0px 0px 0px 0px;
+  transform: translateY(2px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+.button--input {
+  padding: 12px 40px;
+  border-radius: 8px;
+  background-color: rgb(132, 132, 249);
+  box-shadow: 2px 2px 2px 1px rgb(131, 131, 219);
+  border: 1px solid gray;
+  font-size: 20px;
+}
+
+.button--input:hover {
+  background-color: cadetblue;
+  color: rgb(246, 244, 248);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.button--rotate-on {
+  animation: rotate ease 3s;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button--up-on {
+  animation: up ease 2s;
+}

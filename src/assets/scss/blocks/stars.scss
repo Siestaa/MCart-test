@@ -1,0 +1,54 @@
+.stars__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stars {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  padding: 10px 5px;
+}
+
+.stars__label {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+
+  & > input {
+    appearance: none;
+  }
+
+  & > svg {
+    fill: lightgoldenrodyellow;
+    transition: 0.5s;
+  }
+
+  &:has(input:checked) > svg {
+    fill: yellow;
+    transition: 0.5s;
+  }
+
+  &:has(input:checked) ~ .stars__label > svg {
+    transition: 0.5s;
+    fill: yellow;
+  }
+
+  &:hover > svg {
+    transition: 0.5s;
+    transform: translateY(-6px);
+    fill: yellow;
+  }
+
+  &:hover ~ .stars__label > svg {
+    transition: 0.5s;
+    transform: translateY(-6px);
+    fill: yellow;
+  }
+}
